@@ -2,9 +2,9 @@
   "name": "avance_proyecto_full_stack",
   "version": "1.0.0",
   "description": "Nomeclaturas",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon --exec node app/index.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/Traxcomgarza/Avance_Proyecto_Full_Stack/issues"
   },
-  "homepage": "https://github.com/Traxcomgarza/Avance_Proyecto_Full_Stack#readme"
+  "homepage": "https://github.com/Traxcomgarza/Avance_Proyecto_Full_Stack#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "nodemon": "^3.1.9"
+  }
 }
