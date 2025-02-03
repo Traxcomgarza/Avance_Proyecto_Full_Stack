@@ -1,6 +1,8 @@
 import bcryptjs from "bcryptjs";
+import dotenv from "dotenv";
+import jsonwebtoken from "jsonwebtoken";
 
-
+dotenv.config();
 const usuarios=[{
     user:"a",
     email:"a@a.com",
@@ -21,9 +23,23 @@ async function Login(req,res){
         res.status(400).send({status:"Error",message:"Este usuario ya existe"})
     }
     const loginCorrecto = await bcryptjs.compare(password,usuarioARevisar.password)
+    if(!loginCorrecto){
+        return res.status(400).send({status:"Error",message:"Error durante login"})
+      }
+      const token = jsonwebtoken.sign(
+        {user:usuarioARevisar.user},
+        process.env.JWT_SECRET,
+        {expiresIn:process.env.JWT_EXPIRATION});
     
+        const cookieOption = {
+          expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 60 * 1000),
+          path: "/"
+        }
+        res.cookie("jwt",token,cookieOption);
+        res.send({status:"ok",message:"Usuario loggeado",redirect:"/admin"});
+    }
 
-}
+
 async function register(req,res){
     console.log(req.body)
     const user=req.body.user;

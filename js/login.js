@@ -1,4 +1,4 @@
-const mensajeError = document.getElementById.getElementByName("error")[0]
+const mensajeError = document.getElementById.getElementByclassName("error")[0]
 document.getElementById("logiin-form").addEventListener("submit",async(e)=>{
     e.preventDefault();
     const user =e.target.children.user.value;
