@@ -296,7 +296,7 @@ function onBtnLoginClick() {
 }
 
 function redirectToLogin() {
-    window.location.href = "pages/Login.html"; 
+    window.location.href = "Login.html"; 
 }
 
 function onClickEditarCurso({ id, autor, nombreCurso}) {

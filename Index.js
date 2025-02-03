@@ -14,8 +14,7 @@ app.listen(app.get('port'), () => {
 });
 
 // Configuración
-app.use(express.static(path.join(__dirname, "js")));  // Archivos JS desde la carpeta js
-app.use(express.static(path.join(__dirname, "pages")));  // Archivos estáticos (HTML, CSS) desde la carpeta pages
+app.use(express.static(path.join(__dirname, "pages")));  // Archivos estáticos (HTML, CSS, JS y assets) desde la carpeta pages
 app.use(express.json());
 
 // Rutas

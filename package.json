@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Nomeclaturas",
   "main": "index.js",
-  "type":"module",
-  
+  "type": "module",
   "scripts": {
     "dev": "nodemon --exec node app/index.js",
     "start": "node index.js"
@@ -21,6 +20,7 @@
   },
   "homepage": "https://github.com/Traxcomgarza/Avance_Proyecto_Full_Stack#readme",
   "dependencies": {
+    "avance_proyecto_full_stack": "file:",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.7",
     "dotenv": "^16.4.7",
