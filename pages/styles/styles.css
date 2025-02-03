@@ -615,17 +615,18 @@ td, th {
 
 body.Login-page{
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 1005vh;
+    display: grid;
+   
+    height: 100%;
     font-size: larger;
+    width: 100%;
 
 }
 
 .form-container{
     width: 500px;
-    background-color: #000;
+    background-color: #ffffff;
+    border-radius: 5px;
 
 
 }
@@ -650,3 +651,10 @@ label{
 
 }
 
+
+#main-login{
+    display: grid;
+    width: 100%;
+    place-items: center;
+    
+}

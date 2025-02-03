@@ -5,16 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
     <link rel="stylesheet" href="/pages/styles/styles.css">
-    <script src="/js/register.js"></script>
+    <script src="/js/register.js">
+    </script><script type="text/javascript" src="/js/main.js"></script>
 
 
 </head>
 <body>
+      <!-- MENU -->
+        <!-- El header es una etiqueta para los encabezados que ayuda a un buen SEO en el navegador -->
+        <header class="container py-3 w-100 menu">
+            <div class="menu-logo" onclick="redirect(`${window.location.origin}`)">
+                <img class="me-1 menu-logo__img" src="/assets/logo.png" alt="Logo de hermcode">
+                <p class="text-uppercase quantico-font fw-bold fs-2">hermcode</p>
+            </div>
+
+            <!-- Etiqueta de navegacion entre las diferentes secciones de la página -->
+            <nav class="menu-navbar">
+                <a class="text-yellow fw-bold menu-navbar__a" href="#cursos">CURSOS</a>
+                <a class="text-yellow fw-bold menu-navbar__a" href="#contacto">CONTÁCTANOS</a>
+                <button id="btnLoginPage" class="btn btn-primary menu-navbar__btn" onclick="redirectToLogin()">
+                    Iniciar sesión
+                </button>
+                <button id="btnLogin" class="btn btn-secondary menu-navbar__btn" onclick="onBtnLoginClick()">
+                    Cursos
+                </button>
+            </nav>
+        </header>
     <main>
         <div>
             <h1>Crear Cuenta</h1>
             <p>Cra tu cuenta para entrar como administrador </p>
-            <form id="register-form">
+            <form id="register-form" method="post">
                 <label for="user">Usuario</label>
                 <input type="text" name="user" id="user" placeholder="Nombre de usuario">
             
