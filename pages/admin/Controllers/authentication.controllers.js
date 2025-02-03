@@ -1,3 +1,6 @@
+import bcryptjs from "bcryptjs";
+
+
 const usuarios=[{
     user:"a",
     email:"a@a.com",
@@ -7,14 +10,26 @@ const usuarios=[{
 
 import { error } from "console";
 
-function Login(req,res){
+async function Login(req,res){
+    console.log(req.body)
+    const user=req.body.user;
+    const password=req.body.password;
+    if(!user  || !password)
+        res.status(400).send({status:"Error",message:"LOS CAMPOS ESTAN INCOMPLETOS"})
+    const usuarioARevisar = usuarios.find(usuario =>usuario.user === user);
+    if(usuarioARevisar){
+        res.status(400).send({status:"Error",message:"Este usuario ya existe"})
+    }
+    const loginCorrecto = await bcryptjs.compare(password,usuarioARevisar.password)
+    
 
 }
-function register(req,res){
+async function register(req,res){
     console.log(req.body)
     const user=req.body.user;
     const email=req.body.email;
     const password=req.body.password;
+    
 
     if(!user || !email || !password)
         res.status(400).send({status:"Error",message:"LOS CAMPOS ESTAN INCOMPLETOS"})
