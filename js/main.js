@@ -8,7 +8,7 @@ class Curso {
         this._id = id;
         this._autor = autor;
         this._nombreCurso = nombreCurso;
-        this._terminado = terminado ?? false;
+        this._onBtnLoginClick = terminado ?? false;
     }
 
     // Getters
@@ -287,7 +287,7 @@ function onAgregarCursoSubmit(event) {
 
 function onBtnLoginClick() {
     if(sessionData) {
-        redirect(`${window.location.origin}/cursos.html`)
+        redirect(`${window.location.origin}/pages/cursos.html`)
         return
         
     }
