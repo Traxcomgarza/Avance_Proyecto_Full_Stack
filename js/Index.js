@@ -15,3 +15,4 @@ app.listen(app.get('port'),()=>{
 app.use(express.static(path.join(__dirname,"app")))
 //Rutas
 app.get("/",(req,res)=>res.sendFile(__dirname +"/index.html"))
+app.get("Login",(req,res)=>res.sendFile(__dirname +"/Login.html"))

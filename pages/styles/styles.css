@@ -612,3 +612,41 @@ td, th {
     margin-bottom: 20px;
     /* padding: 8px; */
 }
+
+body.Login-page{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 1005vh;
+    font-size: larger;
+
+}
+
+.form-container{
+    width: 500px;
+    background-color: #000;
+
+
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+input,button{
+    font-weight: bold;
+    font-size: larger;
+    border-radius: 4px;
+    border: unset;
+    padding: 15px 30px;
+
+}
+
+label{
+    display: center;
+
+}
+
