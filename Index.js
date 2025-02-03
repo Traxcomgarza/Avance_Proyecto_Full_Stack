@@ -1,7 +1,7 @@
 import express from "express";
 import path from 'path';
 import { fileURLToPath } from "url";
-import { methods as authentication } from "../pages/admin/Controllers/authentication.controllers.js";
+import { methods as authentication } from './pages/admin/authentication.controllers.js';
 
 // Arreglo del _dirname
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
