@@ -19,8 +19,7 @@ app.use(express.json());
 
 // Rutas
 app.get("/", (req, res) => {
-    // Asegúrate de que el archivo index.html está en la raíz del proyecto
-    const filePath = path.join(__dirname, "index.html");  // Buscando index.html en la raíz
+    const filePath = path.join(__dirname, "index.html"); 
     console.log("Path to index.html:", filePath);
     res.sendFile(filePath);
 });
@@ -31,3 +30,6 @@ app.get("/admin", (req, res) => res.sendFile(path.join(__dirname, "admin", "admi
 
 app.post("/api/login", authentication.Login);
 app.post("/api/register", authentication.register);
+/*
+app.post("/auth/login", authentication.Login);  // Ruta para inicio de sesión
+app.post("/auth/register", authentication.register);*/

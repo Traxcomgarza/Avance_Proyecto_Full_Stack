@@ -1,21 +1,25 @@
-const mensajeError = document.getElementById.getElementByclassName("error")[0]
-document.getElementById("logiin-form").addEventListener("submit",async(e)=>{
-    e.preventDefault();
-    const user =e.target.children.user.value;
-    const password =e.target.children.password.value;
-    const res = await fetch("http://localhost:4000/api/lohin",{
-        method:"POST",
-        header:{
-            "Content-Type":"application/json"
-        },
-        body: JSON.stringify({
-            user,password
-        })
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('login-form').addEventListener('submit', async function(event) {
+        event.preventDefault();
+        
+        const correo = document.getElementById('usuario').value;
+        const contraseña = document.getElementById('password').value;
+        
+        const response = await fetch('/auth/login', {  // Cambia aquí la ruta a /auth/login
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ correo, contraseña })
+        });
+        
+        const data = await response.json();
+        
+        if (response.status === 200) {
+            alert('Inicio de sesión exitoso');
+            // Redireccionar a la página principal o de usuario
+        } else {
+            alert(`Error: ${data.message}`);
+        }
     });
-    if(res.ok)return mensajeError.classList,toggle("escondido",false)
-    const realson = await res.json();
-    if(resJson.redirect){
-        window.location.href = resJson.redirect;
-
-    }    
-})
+});
