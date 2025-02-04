@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Usuarios</title>
+    <script src="admin.js" defer></script>
+        <link rel="stylesheet" href="/styles/styles.css">
+
+</head>
+<body>
+    <h1>PAGINA DE ADMINISTRADOR</h1>
+    
+    <button onclick="cerrarSesion()">Cerrar Sesión</button>
+
+    <input type="text" id="buscador" onkeyup="buscarUsuarios()" placeholder="Buscar usuario...">
+    <h2>Lista de Usuarios</h2>
+    <table border="1" id="tablaUsuarios">
+    <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Contraseña</th>
+            <th>Rol</th>
+            <th>Cursos</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Usuario 1</td>
+            <td>123</td>
+            <td>Administrador</td>
+            <td>HTML</td>
+            <td>
+            <button onclick="editarUsuario(this)">Editar</button>
+            <button onclick="eliminarUsuario(this)">Eliminar</button>
+        </td>
+        </tr>
+    </tbody>
+    </table>
+    <button onclick="mostrarFormulario()">Agregar Usuario</button>
+    <div id="formulario" style="display:none;">
+        <h3>Formulario para Agregar Usuario</h3>
+        <form id="formUsuario">
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" required><br><br>
+
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" id="contraseña" required><br><br>
+
+            <label for="rol">Rol:</label>
+            <input type="text" id="rol" required><br><br>
+
+            <label for="cursos">Cursos:</label>
+            <input type="text" id="cursos" required><br><br>
+
+            <button type="button" onclick="agregarUsuario()">Agregar Usuario</button>
+
+    <script>
+
+</script>
+</body>
+</html>

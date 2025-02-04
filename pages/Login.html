@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesion </title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="js/login.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+
+
+
+<body class ="main-section">
+      <!-- MENU -->
+        <!-- El header es una etiqueta para los encabezados que ayuda a un buen SEO en el navegador -->
+        <header class="container py-3 w-100 menu">
+            <div class="menu-logo" onclick="redirect(`${window.location.origin}`)">
+                <img class="me-1 menu-logo__img" src="assets/logo.png" alt="Logo de hermcode">
+                <p class="text-uppercase quantico-font fw-bold fs-2">hermcode</p>
+            </div>
+
+            <!-- Etiqueta de navegacion entre las diferentes secciones de la página -->
+            <nav class="menu-navbar">
+                <a class="text-yellow fw-bold menu-navbar__a" href="#cursos">CURSOS</a>
+                <a class="text-yellow fw-bold menu-navbar__a" href="#contacto">CONTÁCTANOS</a>
+                <button id="btnLoginPage" class="btn btn-primary menu-navbar__btn" onclick="redirectToLogin()">
+                    Iniciar sesión
+                </button>
+                <button id="btnLogin" class="btn btn-secondary menu-navbar__btn" onclick="onBtnLoginClick()">
+                    Iniciar sesión
+                </button>
+            </nav>
+        </header>
+    <main id="main-login">
+        <div class="form-container">
+            <h1>Iniciar Sesion</h1>
+            <form id="login-form">
+                <label for="Usuario">Usuario</label>
+                <input type="text"name="Usuario"id="usuario" placeholder="Nombre de usuario">
+                <label for="Contraseña">Contraseña</label>
+                <input type="password"name="password"id="password" placeholder="Contraseña">
+                <button type"submit">Iniciar Sesion</button>
+                <p>Aun no tienes una cuenta? - <a href="Registro.html">Registrate </a></p>
+            </form>
+        </div>
+    </main>
+
+
+    
+</body>
+</html>
