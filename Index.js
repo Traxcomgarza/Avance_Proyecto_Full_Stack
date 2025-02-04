@@ -2,6 +2,15 @@ import express from "express";
 import path from 'path';
 import { fileURLToPath } from "url";
 import { methods as authentication } from './pages/admin/authentication.controllers.js';
+import mongoose from "mongoose";
+
+const usuarioSchema = new mongoose.Schema({
+    user: { type: String, required: true, unique: true },
+    email: { type: String, required: true, unique: true },
+    password: { type: String, required: true }
+});
+
+export default mongoose.model("Usuario", usuarioSchema);
 
 // Arreglo del _dirname
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
