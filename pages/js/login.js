@@ -34,9 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (users[username] === password) {
             alert('Login exitoso');
-            window.location.href = 'admin.html'; // Redirige a la página de administración
+            window.location.href = '/admin/admin.html'; 
         } else {
             alert('Usuario o contraseña incorrectos');
         }
     });
 });
+
