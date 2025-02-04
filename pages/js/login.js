@@ -24,20 +24,19 @@
     });
 });
 */
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('login-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const username = document.getElementById('usuario').value;
-        const password = document.getElementById('password').value;
+document.getElementById('login-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita que el formulario se envíe
 
-        let users = JSON.parse(localStorage.getItem('users')) || {};
-        
-        if (users[username] === password) {
-            alert('Login exitoso');
-            window.location.href = '/admin/admin.html'; 
-        } else {
-            alert('Usuario o contraseña incorrectos');
-        }
-    });
+    // Obtén los valores del formulario
+    const username = document.getElementById('usuario').value;
+    const password = document.getElementById('password').value;
+
+    // Verifica si el usuario existe y si la contraseña es correcta
+    if (users[username] && users[username] === password) {
+        alert('Inicio de sesión exitoso. Redirigiendo a la página de administración.');
+        // Redirige al usuario a la página de administración
+        window.location.href = '/admin/admin.html';
+    } else {
+        alert('Usuario o contraseña incorrectos. Por favor, intenta de nuevo.');
+    }
 });
-

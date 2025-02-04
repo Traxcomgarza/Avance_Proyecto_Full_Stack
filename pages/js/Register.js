@@ -28,27 +28,26 @@
 
 // Crear usuario predeterminado si no existe
 // Crear usuario predeterminado si no existe
-document.addEventListener('DOMContentLoaded', function() {
-    // Crear usuario predeterminado si no existe
-    let users = JSON.parse(localStorage.getItem('users')) || {};
-    if (!users['admin']) {
-        users['admin'] = '123';
+// Diccionario para almacenar los usuarios
+
+
+let users = {};
+
+document.getElementById('register-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita que el formulario se envíe
+
+    // Obtén los valores del formulario
+    const username = document.getElementById('user').value;
+    const password = document.getElementById('password').value;
+
+    // Verifica si el usuario ya existe
+    if (users[username]) {
+        alert('El usuario ya existe. Por favor, elige otro nombre de usuario.');
+    } else {
+        // Almacena el nuevo usuario en el diccionario
+        users[username] = password;
+        alert('Registro exitoso. Ahora puedes iniciar sesión.');
+        // Redirige al usuario a la página de login
+        window.location.href = 'login.html';
     }
-    localStorage.setItem('users', JSON.stringify(users));
-
-    document.getElementById('register-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const username = document.getElementById('user').value;
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-
-        if (username && email && password) {
-            users[username] = password;
-            localStorage.setItem('users', JSON.stringify(users));
-            alert('Registro exitoso');
-            window.location.href = 'login.html'; // Redirige a la página de login
-        } else {
-            alert('Por favor, complete todos los campos');
-        }
-    });
 });
